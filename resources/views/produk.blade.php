@@ -12,38 +12,40 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">UTS Laravel</a>
+            <a class="navbar-brand" href="#">Laravel</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('nama') }}">Home</a>
+                        <a class="nav-link active" aria-current="page" href="..">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Produk</a>
+                        <a class="nav-link" href="{{ route('daftar-produk') }}">Produk</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                <form class=" d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
             </div>
         </div>
     </nav>
-    <div class="container py-2" style="text-align: right;">
-        <a href="{{ route('tambah-nama') }}" class="btn btn-primary">Tambah Nama</a>
-    </div>
-    <div class="card">
+    <div class="card" style="padding: 50px;">
         <div class="body">
+            <div class="container py-2" style="text-align: right;">
+                <a href="{{ route('tambah-produk') }}" class="btn btn-primary">Tambah Produk</a>
+            </div>
+
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">No</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Angka</th>
-                        <th scope="col">Umur</th>
+                        <th scope="col">Nama Produk</th>
+                        <th scope="col">Jumlah</th>
+                        <th scope="col">Expired</th>
+                        <th scope="col">Satuan</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,16 +53,18 @@
                     $no = 1;
                     foreach ($arr as $item) : ?>
                         <tr>
-                            <th scope="row">{{ $no }}</th>
-                            <td>{{ $item['nama'] }}</td>
-                            <td>{{ $item['angka'] }}</td>
-                            <td>{{ $item['umur'] }}</td>
+                            <th scope="row"><?php echo $no; ?></th>
+                            <td><?php echo $item['nama_produk']; ?></td>
+                            <td><?php echo $item['jumlah']; ?></td>
+                            <td><?php echo $item['expired']; ?></td>
+                            <td><?php echo $item['satuan']; ?></td>
                         </tr>
                     <?php
                         $no++;
                     endforeach; ?>
                 </tbody>
             </table>
+
         </div>
     </div>
 

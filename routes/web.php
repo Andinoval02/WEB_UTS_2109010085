@@ -15,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [SiteController::class, 'index']);
-Route::get('/nama', [SiteController::class, 'nama'])->name('nama');
-Route::get('/tambah-nama', [SiteController::class, 'tambahNama'])->name('tambah-nama');
+Route::get('/daftar-produk', [SiteController::class, 'daftarProduk'])->name('daftar-produk');
+Route::get('/tambah-produk', [SiteController::class, 'tambahProduk'])->name('tambah-produk');
